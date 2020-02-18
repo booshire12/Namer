@@ -19,3 +19,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ➜  namer git:(master) python3 namer.py 
 
 vermifugous versant
+
+## TODO
+
+I need to add this
+'''
+nltk.download('words')
+nltk.download('averaged_perceptron_tagger')
+'''
