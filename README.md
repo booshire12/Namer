@@ -23,7 +23,8 @@ vermifugous versant
 ## TODO
 
 I need to add this
-'''
+
+```
 nltk.download('words')
 nltk.download('averaged_perceptron_tagger')
-'''
+```
