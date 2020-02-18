@@ -1,0 +1,15 @@
+# Namer
+
+Generate names in the form of adjective noun with the same starting letter
+
+## Prerequisites
+
+pip3 install nltk
+
+## Authors
+
+* **Adam Mohr** - *Initial work*
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
