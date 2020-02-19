@@ -8,8 +8,10 @@ import string
 import json
 import random
 import os
+import sys
 
 def generate_wordlist():
+    print('Generating new word files')
     # Generate Lists of Nouns and Adjectives
     word_list = words.words()
     letter_array = list(string.ascii_lowercase)
@@ -22,8 +24,10 @@ def generate_wordlist():
         
         for word in word_list:
             if word.startswith(letter) and len(word) > 3:
+                # These are the POS tags for adjectives
                 if pos_tag([word])[0][1] in ['JJ', 'JJR', 'JJS']:
                     word_array_adjective[letter].append(word)
+                # These are the POS tags for nouns
                 elif pos_tag([word])[0][1] in ['NN', 'NNS', 'NNP', 'NNPS']:
                     word_array_noun[letter].append(word)
 
@@ -38,7 +42,6 @@ def generate_wordlist():
 
 # Generate word files if they do not exist
 if not Path("nouns.json").is_file() or not Path("adjectives.json").is_file():
-    print('Generating new word files')
     generate_wordlist()
 
 # Import word lists generated from generate_wordlist.py
@@ -51,14 +54,16 @@ with open('nouns.json') as json_file:
 with open('adjectives.json') as json_file:
     word_array_adjective = json.load(json_file)
 
-
 # Select random letter
 letter_array = list(string.ascii_lowercase)
 letter = random.choice(letter_array)
 
+# Generate and return response
 response = [
-    random.choice(word_array_adjective[letter]),
-    random.choice(word_array_noun[letter]),
+    random.choice(word_array_adjective[letter]).title(),
+    random.choice(word_array_noun[letter]).title(),
 ]
 
 print(' '.join(response))
+
+sys.exit(0)
