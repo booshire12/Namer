@@ -15,6 +15,6 @@ RUN python3 /usr/src/app/run_first.py
 # Need to grab the nouns and adjectives
 RUN python3 /usr/src/app/namer.py
 
-EXPOSE 9977
+EXPOSE 5000
 
 CMD ["python3", "/usr/src/app/app.py"]
