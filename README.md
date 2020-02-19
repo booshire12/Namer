@@ -2,6 +2,8 @@
 
 Generate names in the form of adjective noun with the same starting letter
 
+Done in an imaginative way to overdo a simple task
+
 ## Initialize
 
 * install docker
