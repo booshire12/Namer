@@ -8,8 +8,8 @@ Done in an imaginative way to overdo a simple task
 
 * install docker
 * git pull this repo
-* docker build -t namer .
-* docker run -d -p 9977:5000 --name namer namer
+* docker build -t namer:$(date +%Y%m%d) .
+* docker run -d -p 9977:5000 --name namer namer:$(date +%Y%m%d)
 * open browser and navigate to http://localhost:9977
 
 ## Authors
