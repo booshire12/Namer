@@ -3,7 +3,7 @@ FROM alpine:latest
 
 RUN apk add --update py3-pip
 COPY requirements.txt /usr/src/app/
-RUN pip3 install --no-cache-dir -r /usr/src/app/requirements.txt
+RUN pip3 install --no-cache-dir --break-system-packages -r /usr/src/app/requirements.txt
 COPY app.py /usr/src/app/
 COPY namer.py /usr/src/app/
 COPY run_first.py /usr/src/app/
